@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+	<listeners>
+		<listener class-name="com.framework.listners.TestListners"></listener>
+	</listeners>
+	<test thread-count="5" parallel="tests" name="Test1">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.application.test.ApplicationTest">
+				<methods>
+					<include name="verifyApplicationTitle"></include>
+					<include name="verifyApplicationLogo"></include>
+					<include name="verifyApplicationCaption"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" parallel="tests" name="Test2">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.application.test.ApplicationTest">
+				<methods>
+					<include name="verifyApplicationLoginPageHeader"></include>
+					<include name="verifyApplicationLogin"></include>
+					<include name="verifyRegistrationLink"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->
